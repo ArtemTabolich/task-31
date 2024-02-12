@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-deployment
+  labels:
+    app: application1
+    app.kubernetes.io/name: application1
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      project: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        project: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: nginx
+          image: {{ .Values.imagenginx }}
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              memory: 100Mi
+              cpu: 80m
+            requests:
+              memory: 100Mi
+              cpu: 80m
+              #        - name: apache
+              #image: {{ .Values.imageapache }}
+              #ports:
+              #- containerPort: 8888
