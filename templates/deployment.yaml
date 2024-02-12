@@ -19,8 +19,8 @@ spec:
         - name: nginx
           image: {{ .Values.imagenginx }}
           ports:
-            - containerPort: 80
-          - name: apache
-            image: {{ .Values.imageapache }}
-            ports:
-              - containerPort: 8888
+          - containerPort: 80
+        - name: apache
+          image: {{ .Values.imageapache }}
+          ports:
+          - containerPort: 8888
