@@ -27,14 +27,6 @@ spec:
             requests:
               memory: 100Mi
               cpu: 80m
-          volumeMounts:
-            - name: index
-              mountPath: /var/www/tabolich/html/index.html
-              subPath: index.html
-      volumes:
-        - name: index
-          configMap:
-          name: content
           - name: apache
             image: {{ .Values.imageapache }}
             ports:
