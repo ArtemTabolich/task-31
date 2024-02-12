@@ -1,0 +1,5 @@
+
+
+imagenginx: artemtabolich/nginx-task14:latest
+imageapache: artemtabolich/apache2-task14:latest
+replicaCount: 1

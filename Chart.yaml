@@ -1,0 +1,15 @@
+apiVersion: v2
+name: App-HelmChart
+descroption: My Helm chart for Kubernetes
+type: application
+version: 0.1.0
+appVersion: "1.2.3"
+
+keywords:
+  - apache
+  - nginx
+  - artemtabolich
+
+maintainers:
+  - name : Artem Tabolich
+    email: artem.tabolich@gmail.com
