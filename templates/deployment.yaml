@@ -22,8 +22,7 @@ spec:
           - containerPort: 80
           volumeMounts:
             - name: index
-              mountPath: /var/www/tabolich/html/index.html
-              subPath: index.html
+              mountPath: /var/www/tabolich/html/
         - name: apache
           image: {{ .Values.imageapache }}
           ports:
