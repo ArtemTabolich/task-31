@@ -20,7 +20,15 @@ spec:
           image: {{ .Values.imagenginx }}
           ports:
           - containerPort: 80
+          volumeMounts:
+            - name: index
+              mountPath: /var/www/tabolich/html/index.html
+              subPath: index.html
         - name: apache
           image: {{ .Values.imageapache }}
           ports:
           - containerPort: 8888
+      volumes:
+        - name: index
+          configMap:
+            name: index
