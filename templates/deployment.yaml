@@ -34,7 +34,7 @@ spec:
       volumes:
         - name: index
           configMap:
-          name: index
+          name: content
           - name: apache
             image: {{ .Values.imageapache }}
             ports:
